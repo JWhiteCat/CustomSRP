@@ -62,6 +62,12 @@
     <Compile Include="Assets\Custom RP\Runtime\CustomRenderPipelineAsset.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Custom RP\ShaderLibrary\UnityInput.hlsl" />
+    <None Include="Assets\Custom RP\Shaders\Unlit.shader" />
+    <None Include="Assets\Custom RP\ShaderLibrary\Common.hlsl" />
+    <None Include="Assets\Custom RP\Shaders\UnlitPass.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>D:\software\Unity Hub\Editor\Unity 2019.4.40f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
