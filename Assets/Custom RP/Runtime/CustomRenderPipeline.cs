@@ -17,6 +17,6 @@ public class CustomRenderPipeline : RenderPipeline
 
     public CustomRenderPipeline()
     {
-        GraphicsSettings.useScriptableRenderPipelineBatching = true;
+        GraphicsSettings.useScriptableRenderPipelineBatching = false;
     }
 }
