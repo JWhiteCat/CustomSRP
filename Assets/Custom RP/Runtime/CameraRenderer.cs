@@ -38,7 +38,7 @@ public partial class CameraRenderer
         var drawingSettings = new DrawingSettings(unlitShaderTagId, sortingSettings)
         {
             enableDynamicBatching = true,
-            enableInstancing = false,
+            enableInstancing = true,
         };
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
 
