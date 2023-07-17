@@ -7,6 +7,8 @@ public partial class CameraRenderer
 
     Camera camera;
 
+    Lighting lighting = new Lighting();
+
     public void Render(ScriptableRenderContext context, Camera camera,
         bool useDynamicBatching, bool useGPUInstancing)
     {
@@ -22,6 +24,7 @@ public partial class CameraRenderer
         }
 
         Setup();
+        lighting.Setup(context);
         DrawVisibleGeometry(useDynamicBatching, useGPUInstancing);
         DrawUnsupportedShaders();
         DrawGizmos();
