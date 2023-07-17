@@ -28,7 +28,8 @@ public partial class CameraRenderer
         Submit();
     }
 
-    static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
+    static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
+                       litShaderTagId = new ShaderTagId("CustomLit");
 
     void DrawVisibleGeometry(bool useDynamicBatching, bool useGPUInstancing)
     {
@@ -36,11 +37,15 @@ public partial class CameraRenderer
         {
             criteria = SortingCriteria.CommonOpaque
         };
+
         var drawingSettings = new DrawingSettings(unlitShaderTagId, sortingSettings)
         {
             enableDynamicBatching = useDynamicBatching,
             enableInstancing = useGPUInstancing,
         };
+
+        drawingSettings.SetShaderPassName(1, litShaderTagId);
+
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
 
         context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
