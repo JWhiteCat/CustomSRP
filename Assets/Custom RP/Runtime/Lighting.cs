@@ -15,6 +15,7 @@ public class Lighting
 
     public void Setup(ScriptableRenderContext context, CullingResults cullingResults)
     {
+        this.cullingResults = cullingResults;
         buffer.BeginSample(bufferName);
         SetupLights();
         buffer.EndSample(bufferName);
